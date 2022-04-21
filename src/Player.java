@@ -67,6 +67,9 @@ public class Player {
     public ArrayList<City> getCities(){
         return cities;
     }
+    public String getName(){
+        return name;
+    }
 
     public ArrayList<Weapon> getWeapons(){
         return weapons;

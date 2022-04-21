@@ -10,12 +10,19 @@ public class Main {
     }
 
     public static void buy(Player player, int index, boolean[] b){
+        if (b[index]){
+            return;
+        }
+
         String[][] att = {{"ICBM","2000000","7","50"},{"Nuclear Submarinek","7000000","3","100"},{"Bomber","5000","5","20"}};
         String[][] def = {{"Airborne HQ", "50000","25"},{"Underground Base","100000","50"},{"Anti-air defense","200000","100"}};
         String choice;
         int val;
         int n;
         int playerBudget = player.getBudget();
+
+        StdOut.println(player.getName() + " Turn");
+        StdOut.println();
 
         StdOut.println("Choose the weapons to buy");
         for (int i = 0; i < att.length; i++){
@@ -24,6 +31,7 @@ public class Main {
         choice = StdIn.readString();
         if (choice.equals("s")){
             b[index] = true;
+            return;
         }
         val = Integer.parseInt(choice);
 
@@ -33,6 +41,9 @@ public class Main {
 
             if (Integer.parseInt(att[val][1])*n <= playerBudget){
                 player.buyWeapon(att[val][0],att[val][3], att[val][2],n, att[val][1]);
+            }
+            else{
+                StdOut.println("Out of Budget");
             }
         } else{
             StdOut.println("Invalid Input!");
@@ -46,6 +57,7 @@ public class Main {
         choice = StdIn.readString();
         if (choice.equals("s")){
             b[index] = true;
+            return;
         }
         val = Integer.parseInt(choice);
 
@@ -55,6 +67,9 @@ public class Main {
 
             if (Integer.parseInt(att[val][1])*n <= playerBudget){
                 player.buyDefense(def[val][0],def[val][2], n, def[val][1]);
+            }
+            else{
+                StdOut.println("Out of Budget");
             }
         } else{
             StdOut.println("Invalid Input!");
