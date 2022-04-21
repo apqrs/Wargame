@@ -1,5 +1,70 @@
 import java.util.Scanner;
 public class Main {
+    public static boolean isReady(boolean[] b){
+        for (boolean i:b){
+            if (!i){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static void buy(Player player, int index, boolean[] b){
+        String[][] att = {{"ICBM","2000000","7","50"},{"Nuclear Submarinek","7000000","3","100"},{"Bomber","5000","5","20"}};
+        String[][] def = {{"Airborne HQ", "50000","25"},{"Underground Base","100000","50"},{"Anti-air defense","200000","100"}};
+        String choice;
+        int val;
+        int n;
+        int playerBudget = player.getBudget();
+
+        StdOut.println("Choose the weapons to buy");
+        for (int i = 0; i < att.length; i++){
+            StdOut.println(i+" "+ att[i][0] + "Cost: "+att[i][1]+ "Strength: "+att[i][3]+"Time taken: "+att[i][2]);
+        }
+        choice = StdIn.readString();
+        if (choice.equals("s")){
+            b[index] = true;
+        }
+        val = Integer.parseInt(choice);
+
+        if (val >= 0 && val < att.length){
+            StdOut.println("How many?");
+            n = StdIn.readInt();
+
+            if (Integer.parseInt(att[val][1])*n <= playerBudget){
+                player.buyWeapon(att[val][0],att[val][3], att[val][2],n, att[val][1]);
+            }
+        } else{
+            StdOut.println("Invalid Input!");
+
+        }
+
+        StdOut.println("Choose the defenses to buy");
+        for (int i = 0; i < att.length; i++){
+            StdOut.println(i+" "+ def[i][0]+ "Cost: "+def[i][1]+ "Strength: "+def[i][2]);
+        }
+        choice = StdIn.readString();
+        if (choice.equals("s")){
+            b[index] = true;
+        }
+        val = Integer.parseInt(choice);
+
+        if (val >= 0 && val < att.length){
+            StdOut.println("How many?");
+            n = StdIn.readInt();
+
+            if (Integer.parseInt(att[val][1])*n <= playerBudget){
+                player.buyDefense(def[val][0],def[val][2], n, def[val][1]);
+            }
+        } else{
+            StdOut.println("Invalid Input!");
+
+        }
+
+
+
+
+    }
 
     public static void main(String[] args) {
         Player usa = new Player("USA",13000000);
@@ -14,64 +79,21 @@ public class Main {
         russia.addCity(new City("Yekaterinburg",1350000));
         System.out.println("Hello world");
 
-        String[][] att = {{"ICBM","2000000","7","50"},{"Nuclear Submarinek","7000000","3","100"},{"Bomber","5000","5","20"}};
-        String[][] def = {{"Airborne HQ", "50000","25"},{"Underground Base","100000","50"},{"Anti-air defense","200000","100"}};
 
 
+        Player[] users = {usa, russia};
         //Attack options Sub 7,000,000 100%,IBM 2,000,000 50 %,bombers 500 25% ,
         //Defense options Airborn HQ, Underground base, Anti-air defenses
 
-        Boolean[] ready = {false, false};
-        while (ready[1] == false && ready[2] == false) {
+        boolean[] ready = new boolean[users.length];
+        int turn = 0;
+         while (!isReady(ready)){
+             buy(users[turn], turn, ready);
+             turn++;
 
-            Player[] users = {usa, russia};
+             turn = turn% users.length;
 
-            int x = 0;
-            int choice = 0;
-
-            Player user = users[x];
-            StdOut.println("Press 1 for Nuclear Sub");
-            StdOut.println("Press 2 for ICBM");
-            StdOut.println("Press 3 for ICBM");
-            StdOut.println("Press 4 for Airborne HQ");
-            StdOut.println("Press 5 for Underground Base");
-            StdOut.println("Press 6 for Anti-air defense");
-            StdOut.println("Press 7 to begin Annihilation");
-
-
-            if (choice == 2) {
-                user.buyWeapon("ICBM", "50", "7", 1, "2000000");
-                x += 1;
-            }
-            if (choice == 1) {
-                user.buyWeapon("Nuclear Submarine", "100", "3", 1, "7000000");
-                x += 1;
-            }
-            if (choice == 3) {
-                user.buyWeapon("Bomber", "25", "3", 1, "50000");
-                x += 1;
-            }
-            if (choice == 4) {
-                user.buyDefense("Airborne HQ", "25", 1, 70000);
-                x += 1;
-            }
-            if (choice == 5) {
-                user.buyDefense("Underground Base", "50", 1, 150000);
-                x += 1;
-            }
-            if (choice == 6) {
-                user.buyDefense("Anti-air defense", "100", 1, 300000);
-                x += 1;
-            }
-            if (choice == 7) {
-                StdOut.println("Enjoy a glorious death.");
-                ready[x] = true;
-
-            }
-            if (x <= 1) {
-                x = 0;
-            }
-        }
+         }
 
     }
     }

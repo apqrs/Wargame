@@ -45,9 +45,9 @@ public class PlayerTest {
 
     @Test
     public void buysDefense() {
-        player.buyDefense("DefCon", "40", 1, 3000);
+        player.buyDefense("DefCon", "40", 1, "3000");
         assertEquals(1, player.getDefenses().size());
-        player.buyDefense("DefCon", "40", 21, 3000);
+        player.buyDefense("DefCon", "40", 21, "3000");
         assertEquals(22, player.getDefenses().size());
     }
 
