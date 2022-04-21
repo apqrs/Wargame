@@ -17,4 +17,16 @@ public class DefenseTest {
         defense.defend();
         assertEquals(500, weapon.getDamage());
     }
+
+    @Test
+    public void destroysWeapon(){
+        Weapon destroyer = new Weapon("destroyer", "100", "2");
+        Defense netralise = new Defense("Neutralise", "100");
+
+        netralise.setTarget(destroyer);
+        netralise.defend();
+        assertEquals(-1, destroyer.getTurn());
+
+
+    }
 }

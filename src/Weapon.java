@@ -5,6 +5,7 @@ public class Weapon {
     private double damage;
     private int turn;
     private City target;
+    private Defense target_defense;
 //    private int cost;
 
 //    private ArrayList<String> weaponInfo = new ArrayList<String>();
@@ -39,11 +40,16 @@ public class Weapon {
         turn -= 1;
         if (turn == 0){
             this.execute(target);
+
         }
     }
     public void setTarget(City city){
         this.target = city;
     }
+//    public void setTarget(Defense defense){
+//        this.target_defense = defense;
+//    }
+
 
     public void execute(City city){
         city.hit(damage);
@@ -53,7 +59,7 @@ public class Weapon {
         if (str == 100){
             turn = -1;
         }
-        damage = str/100.0 * damage;
+        damage = (1-str/100.0) * damage;
 
     }
 }
