@@ -1,3 +1,4 @@
+import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
@@ -19,12 +20,59 @@ public class Main {
 
         //Attack options Sub 7,000,000 100%,IBM 2,000,000 50 %,bombers 500 25% ,
         //Defense options Airborn HQ, Underground base, Anti-air defenses
+
+        Boolean[] ready = {false, false};
+        while (ready[1] == false && ready[2] == false) {
+
+            Player[] users = {usa, russia};
+
+            int x = 0;
+            int choice = 0;
+
+            Player user = users[x];
+            StdOut.println("Press 1 for Nuclear Sub");
+            StdOut.println("Press 2 for ICBM");
+            StdOut.println("Press 3 for ICBM");
+            StdOut.println("Press 4 for Airborne HQ");
+            StdOut.println("Press 5 for Underground Base");
+            StdOut.println("Press 6 for Anti-air defense");
+            StdOut.println("Press 7 to begin Annihilation");
+
+
+            if (choice == 2) {
+                user.buyWeapon("ICBM", "50", "7", 1, "2000000");
+                x += 1;
+            }
+            if (choice == 1) {
+                user.buyWeapon("Nuclear Submarine", "100", "3", 1, "7000000");
+                x += 1;
+            }
+            if (choice == 3) {
+                user.buyWeapon("Bomber", "25", "3", 1, "50000");
+                x += 1;
+            }
+            if (choice == 4) {
+                user.buyDefense("Airborne HQ", "25", 1, 70000);
+                x += 1;
+            }
+            if (choice == 5) {
+                user.buyDefense("Underground Base", "50", 1, 150000);
+                x += 1;
+            }
+            if (choice == 6) {
+                user.buyDefense("Anti-air defense", "100", 1, 300000);
+                x += 1;
+            }
+            if (choice == 7) {
+                StdOut.println("Enjoy a glorious death.");
+                ready[x] = true;
+
+            }
+            if (x <= 1) {
+                x = 0;
+            }
+        }
+
+    }
     }
 
-    public static void buy(){
-        String response;
-
-
-
-    }
-}
