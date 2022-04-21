@@ -9,7 +9,7 @@ public class City {
         this.civ = civ;
         max = civ;
     }
-    public void hit(int damage){
+    public void hit(double damage){
         civ -= damage/100 * max;
         checkStatus();
     }

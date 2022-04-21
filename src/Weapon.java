@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Weapon {
     private String name;
-    private int damage;
+    private double damage;
     private int turn;
     private City target;
 //    private int cost;
@@ -23,7 +23,7 @@ public class Weapon {
         return name;
     }
 
-    public int getDamage(){
+    public double getDamage(){
         return damage;
     }
 
@@ -49,8 +49,12 @@ public class Weapon {
         city.hit(damage);
     }
 
-    public void defense(){
-        turn = -1;
+    public void defense(int str){
+        if (str == 100){
+            turn = -1;
+        }
+        damage = str/100.0 * damage;
+
     }
 }
 

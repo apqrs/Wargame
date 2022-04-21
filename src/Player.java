@@ -31,10 +31,10 @@ public class Player {
             weapons.add(new Weapon(name, damage, turnDelay));
         }
     }
-    public void buyDefense(int id, int n, int cost){
+    public void buyDefense(String name,String str, int n, int cost){
         budget -= n * cost;
         for (int i = 0; i< n; i++){
-            defenses.add(new Defense(id));
+            defenses.add(new Defense(name, str));
         }
     }
 

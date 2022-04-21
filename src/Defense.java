@@ -5,15 +5,16 @@ public class Defense {
     //    private int chance;
     private Weapon target;
     private boolean status = true;
+    private int str;
 
-    private ArrayList<String> defenseInfo = new ArrayList<String>();
-//    private ArrayList<Integer> defenseEffectiveness = new ArrayList<Integer>();
 
-    public Defense(int id){
-        defenseInfo.add("Anti air");
+
+    public Defense(String name, String str){
+
 //        defenseEffectiveness.add(60);
 
-        this.name = defenseInfo.get(id);
+        this.name = name;
+        this.str = Integer.parseInt(str);
 //        this.chance = defenseEffectiveness.get(id);
     }
 
@@ -22,7 +23,7 @@ public class Defense {
     }
 
     public void defend(){
-        target.defense();
+        target.defense(str);
         status = false;
     }
     public boolean getStatus(){
