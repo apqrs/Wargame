@@ -42,7 +42,6 @@ public class PlayerTest {
         assertEquals(11, player.getWeapons().size());
 
     }
-
     @Test
     public void buysDefense() {
         player.buyDefense("DefCon", "40", 1, "3000");

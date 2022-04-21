@@ -80,7 +80,6 @@ public class Main {
         System.out.println("Hello world");
 
 
-
         Player[] users = {usa, russia};
         //Attack options Sub 7,000,000 100%,IBM 2,000,000 50 %,bombers 500 25% ,
         //Defense options Airborn HQ, Underground base, Anti-air defenses
