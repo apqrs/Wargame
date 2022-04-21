@@ -13,6 +13,9 @@ public class City {
         civ -= damage/100 * max;
         checkStatus();
     }
+    public int getCiv(){
+        return civ;
+    }
 
 
     public void checkStatus(){
