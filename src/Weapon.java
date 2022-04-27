@@ -6,6 +6,7 @@ public class Weapon {
     private int turn;
     private City target;
     private Defense target_defense;
+
 //    private int cost;
 
 //    private ArrayList<String> weaponInfo = new ArrayList<String>();

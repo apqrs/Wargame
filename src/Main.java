@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 public class Main {
     public static boolean isReady(boolean[] b){
@@ -82,6 +83,7 @@ public class Main {
     }
 
     public static void main(String[] args) {
+        ArrayList<Weapon> weaponsLaunched = new ArrayList<Weapon>();
         Player usa = new Player("USA",13000000);
         Player russia = new Player("Russia", 13000000);
 
@@ -109,6 +111,27 @@ public class Main {
 
          }
 
+         turn  = 0;
+         //main game
+        while (gameOver(usa, russia) != -1){
+            turn++;
+
+        }
+
     }
+
+        public static int gameOver(Player usa, Player russia){
+            if (usa.defeated()){
+                return 1;
+            }
+            if (russia.defeated()){
+                return 2;
+            }
+            return -1;
+        }
+
+        public static void play(){
+
+        }
     }
 
