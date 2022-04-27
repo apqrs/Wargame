@@ -1,4 +1,4 @@
-import java.util.Scanner;
+
 public class Main {
     public static boolean isReady(boolean[] b){
         for (boolean i:b){
@@ -26,7 +26,7 @@ public class Main {
 
         StdOut.println("Choose the weapons to buy");
         for (int i = 0; i < att.length; i++){
-            StdOut.println(i+" "+ att[i][0] + "Cost: "+att[i][1]+ "Strength: "+att[i][3]+"Time taken: "+att[i][2]);
+            StdOut.println(i+" "+ att[i][0] + " Cost: "+att[i][1]+ " Strength: "+att[i][3]+" Time taken: "+att[i][2]);
         }
         choice = StdIn.readString();
         if (choice.equals("s")){
@@ -52,7 +52,7 @@ public class Main {
 
         StdOut.println("Choose the defenses to buy");
         for (int i = 0; i < att.length; i++){
-            StdOut.println(i+" "+ def[i][0]+ "Cost: "+def[i][1]+ "Strength: "+def[i][2]);
+            StdOut.println(i+" "+ def[i][0]+ " Cost: "+def[i][1]+ " Strength: "+def[i][2]);
         }
         choice = StdIn.readString();
         if (choice.equals("s")){
@@ -101,14 +101,13 @@ public class Main {
 
         boolean[] ready = new boolean[users.length];
         int turn = 0;
-         while (!isReady(ready)){
-             buy(users[turn], turn, ready);
-             turn++;
+        while (!isReady(ready)){
+            buy(users[turn], turn, ready);
+            turn++;
 
-             turn = turn% users.length;
+            turn = turn% users.length;
 
-         }
+        }
 
     }
-    }
-
+}
