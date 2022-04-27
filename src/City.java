@@ -3,12 +3,13 @@ public class City {
     private int civ;
     private int max;
     private boolean status = true;
-
+    //Checks name of city and civilian count
     public City(String name, int civ){
         this.name = name;
         this.civ = civ;
         max = civ;
     }
+    // Checks how much health is taken from a hit
     public void hit(double damage){
         civ -= damage/100 * max;
         checkStatus();
@@ -17,7 +18,7 @@ public class City {
         return civ;
     }
 
-
+    // Checks to see if city is alive
     public void checkStatus(){
         if (civ <= 0){
             status = false;

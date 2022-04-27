@@ -1,0 +1,11 @@
+This version of the game is designed to manage half of the game. The half of the game that deals with players choosing there defenses.
+In the next version of the game we are planning to introduce combat between the USA and Russia as well as options for more players.
+We are also planning on adding graphics in the next version as well.
+
+The Program works by using 4 different programs. Each program is represented by what they are used to create.
+The four programs are City, Defense, Player, and Weapon.
+Weapons is used to get information for weapons.
+Defenses works to show how defenses are used and what they can target
+Player shows what commands in order to add defenses as well as weapons. It even allows
+City is used to control the different cities and control populations.
+
