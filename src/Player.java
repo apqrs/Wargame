@@ -6,11 +6,12 @@ public class Player {
     private ArrayList<Weapon> weapons = new ArrayList<Weapon>();
     private ArrayList<Defense> defenses = new ArrayList<Defense>();
     private int budget;
-
+//Claims players name and budget
     public Player(String name, int budget){
         this.name = name;
         this.budget = budget;
     }
+    // Used to add city to player's lives
     public void addCity(City city){
         cities.add(city);
     }
@@ -23,7 +24,7 @@ public class Player {
         city.hit(weapon.getDamage());
 
     }
-
+//Used to add weapons to players arsenal
     public void buyWeapon(String name, String damage, String turnDelay, int n, String cost){
         int c = Integer.parseInt(cost);
         budget -= n * c;
@@ -31,6 +32,7 @@ public class Player {
             weapons.add(new Weapon(name, damage, turnDelay));
         }
     }
+    //Used to add defenses to players arsenal
     public void buyDefense(String name,String str, int n, String c){
         int cost = Integer.parseInt(c);
         budget -= n * cost;
@@ -38,7 +40,7 @@ public class Player {
             defenses.add(new Defense(name, str));
         }
     }
-
+//Shows when a player is defeated.
     public boolean defeated(){
         boolean defeated = true;
         boolean cityFallen = true;

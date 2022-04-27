@@ -11,7 +11,7 @@ public class Weapon {
 
 //    private ArrayList<String> weaponInfo = new ArrayList<String>();
 //    private ArrayList<int[]> weaponDamage = new ArrayList<int[]>();
-
+// Declares a weapons name damage as well as turn delay
     public Weapon(String name, String damage, String turnDelay){
 //        weaponInfo.add("ICBM");
 //        weaponDamage.add(new int[]{9000, 8});
@@ -21,14 +21,15 @@ public class Weapon {
         this.turn = Integer.parseInt(turnDelay);
 //        cost = weaponDamage.get(id)[1];
     }
+    // Calls name
     public String getName(){
         return name;
     }
-
+// Gets damage
     public double getDamage(){
         return damage;
     }
-
+//Gets turn for weapons
     public int getTurn(){
         return turn;
     }
