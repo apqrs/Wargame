@@ -111,10 +111,11 @@ public class Main {
 
          }
 
-         turn  = 0;
+         turn  = -1;
          //main game
         while (gameOver(usa, russia) != -1){
             turn++;
+            play();
 
         }
 
@@ -133,5 +134,7 @@ public class Main {
         public static void play(){
 
         }
+
+
     }
 
