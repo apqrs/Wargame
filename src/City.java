@@ -3,11 +3,15 @@ public class City {
     private int civ;
     private int max;
     private boolean status = true;
+    private double positionX;
+    private double positionY;
     //Checks name of city and civilian count
-    public City(String name, int civ){
+    public City(String name, int civ, double x, double y){
         this.name = name;
         this.civ = civ;
         max = civ;
+        positionX = x;
+        positionY = y;
     }
     // Checks how much health is taken from a hit
     public void hit(double damage){
@@ -26,5 +30,9 @@ public class City {
     }
     public boolean getStatus(){
         return status;
+    }
+
+    public double[] getPositions(){
+        return new double[]{positionX, positionY};
     }
 }

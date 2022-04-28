@@ -6,6 +6,8 @@ public class Weapon {
     private int turn;
     private City target;
     private Defense target_defense;
+    private double positionX;
+    private double positionY;
 
 //    private int cost;
 
@@ -63,6 +65,10 @@ public class Weapon {
         }
         damage = (1-str/100.0) * damage;
 
+    }
+
+    public double[] getPositions(){
+        return new double[]{positionX, positionY};
     }
 }
 
