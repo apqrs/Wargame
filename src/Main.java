@@ -2,6 +2,8 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 public class Main {
+
+    // checks whether both players are ready for the battle phase
     public static boolean isReady(boolean[] b){
         for (boolean i:b){
             if (!i){
@@ -11,6 +13,7 @@ public class Main {
         return true;
     }
 
+    // handles the buying process of weapons and defenses
     public static void buy(Player player, int index, boolean[] b, String item){
         StdDraw.clear(Color.BLACK);
         if (b[index]){
