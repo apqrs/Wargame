@@ -30,7 +30,7 @@ public class Main {
         player.showTurn();
 //        StdOut.println();
         StdDraw.setPenColor(Color.red);
-        StdDraw.text(0.2,0.9, "Type 'r' to reset. Press enter after typing");
+        StdDraw.text(0.2,0.9, "Type 'r' to reset. Press enter after typing. Type 's' to stop");
         StdDraw.setPenColor(Color.WHITE);
 
         StdDraw.text(0.5,0.9,"Choose the "+item+" to buy");
@@ -121,7 +121,7 @@ public class Main {
         Player russia = new Player("russia", 13000000);
 
 
-        usa.addCity(new City("Seatle",737015, 0.23, 0.7));
+        usa.addCity(new City("Seatle",737015, 0.13, 0.75));
         usa.addCity(new City("Dallas",1300000, 0.27, 0.7));
         usa.addCity(new City("Washington", 689545, 0.2, 0.6));
         russia.addCity( new City("Novosibirsk",1470000, 0.83, 0.7));
@@ -160,6 +160,9 @@ public class Main {
              for (Player user: users){
                  user.show();
              }
+             for (Player user: users){
+                 user.showWeapons();
+             }
 
 
              turn++;
@@ -171,6 +174,7 @@ public class Main {
                  nturn = 0;
              }
             users[turn].showTurn();
+
              users[turn].takeTurn(users[nturn]);
 
          }

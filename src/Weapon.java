@@ -54,6 +54,7 @@ public class Weapon {
         this.show();
         if (delay == 0){
             this.execute(target);
+
             StdDraw.picture(currentX,currentY, "img/boom.png", 0.05,0.05);
             delay = -1;
 

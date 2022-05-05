@@ -130,11 +130,21 @@ public class Player {
                 city.show(j);
             }
         }
+
+
+    }
+
+    public void showWeapons(){
+        Weapon i;
         for (int j = 0; j<launchedWeapons.size(); j++){
             i = launchedWeapons.get(j);
-            i.takeTurn();
+
             if (i.getTurn() == -1){
                 launchedWeapons.remove(j);
+
+            }
+            else{
+                i.takeTurn();
             }
         }
 

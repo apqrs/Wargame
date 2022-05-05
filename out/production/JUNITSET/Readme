@@ -1,11 +1,17 @@
-This version of the game is designed to manage half of the game. The half of the game that deals with players choosing there defenses.
-In the next version of the game we are planning to introduce combat between the USA and Russia as well as options for more players.
-We are also planning on adding graphics in the next version as well.
+The game begins in a buy phase where both players will buy weapons and defenses.
 
-The Program works by using 4 different programs. Each program is represented by what they are used to create.
-The four programs are City, Defense, Player, and Weapon.
-Weapons is used to get information for weapons.
-Defenses works to show how defenses are used and what they can target
-Player shows what commands in order to add defenses as well as weapons. It even allows
-City is used to control the different cities and control populations.
+After both player are done buying, the battle phase begins.
+
+Each player can take one action per turn: attack or defend.
+
+If the player chooses to attack, player will be asked to choose the target city. Each city is displayed on the map with its corresponding number.
+
+If the player choose to defend, player will be provided with the list of weapons currently launched, and player can neutralise that weapon immediately.
+
+Player loses if:
+1. All the cities are destroyed
+2. No weapons or defenses are left
+
+Although the basic functionality of the game is complete, I believe that the game is very raw and needs to be polished more.
+Given the time constraint, I couldn't fully implement all the features that I had originally intended to.
 

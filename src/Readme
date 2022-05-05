@@ -15,3 +15,6 @@ Player loses if:
 Although the basic functionality of the game is complete, I believe that the game is very raw and needs to be polished more.
 Given the time constraint, I couldn't fully implement all the features that I had originally intended to.
 
+
+'r' is used to reset the answer
+'s' is used to stop buying
