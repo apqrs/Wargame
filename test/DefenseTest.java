@@ -9,7 +9,7 @@ public class DefenseTest {
     @BeforeEach
     public void setUp() throws Exception {
         defense = new Defense("Anti Air", "50");
-        weapon = new Weapon("Gun", "1000", "3");
+        weapon = new Weapon("Gun", "1000", "3", 0.23, 0.7);
     }
     @Test
     public void reducesDamage() {
@@ -20,7 +20,7 @@ public class DefenseTest {
 
     @Test
     public void destroysWeapon(){
-        Weapon destroyer = new Weapon("destroyer", "100", "2");
+        Weapon destroyer = new Weapon("destroyer", "100", "2", 0.23, 0.7);
         Defense netralise = new Defense("Neutralise", "100");
 
         netralise.setTarget(destroyer);

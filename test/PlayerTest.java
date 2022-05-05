@@ -21,7 +21,7 @@ public class PlayerTest {
 
     @Test
     public void addsCity() {
-        City test = new City("testCity", 10000);
+        City test = new City("testCity", 10000, 0.23, 0.7);
         cityList.add(test);
         player.addCity(test);
         assertEquals(cityList, player.getCities());

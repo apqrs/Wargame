@@ -35,4 +35,9 @@ public class City {
     public double[] getPositions(){
         return new double[]{positionX, positionY};
     }
+
+    public void show(int j){
+        StdDraw.text(positionX, positionY, j+" " + name);
+    }
+
 }

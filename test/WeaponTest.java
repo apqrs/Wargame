@@ -8,12 +8,12 @@ public class WeaponTest {
     private City test;
     @BeforeEach
     public void setUp() throws Exception {
-        weapon = new Weapon("ICBM", "10", "5");
+        weapon = new Weapon("ICBM", "10", "5", 0.23, 0.7);
 
     }
     @Test
     public void attacksCity() {
-        test = new City("test",3000);
+        test = new City("test",3000, 0.23, 0.7);
         weapon.execute(test);
         assertEquals(0.9*3000, test.getCiv());
     }
@@ -27,8 +27,8 @@ public class WeaponTest {
 
     @Test
     public void takesTurnandExecute(){
-        Weapon test = new Weapon("test", "40", "5");
-        City testCity = new City("name", 5000);
+        Weapon test = new Weapon("test", "40", "5", 0.23, 0.7);
+        City testCity = new City("name", 5000, 0.23, 0.7);
         test.takeTurn();
         test.setTarget(testCity);
         assertEquals(4, test.getTurn());

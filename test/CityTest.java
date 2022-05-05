@@ -8,8 +8,8 @@ public class CityTest {
     private Weapon weapon;
     @BeforeEach
     public void setUp() throws Exception {
-        city = new City("test", 1000);
-        weapon = new Weapon("Gun", "100", "3");
+        city = new City("test", 1000, 0.23, 0.7);
+        weapon = new Weapon("Gun", "100", "3", 0.23, 0.7);
     }
     @Test
     public void getsHit() {

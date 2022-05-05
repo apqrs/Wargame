@@ -29,4 +29,7 @@ public class Defense {
     public boolean getStatus(){
         return status;
     }
+    public String getName(){
+        return name;
+    }
 }
